@@ -1,0 +1,584 @@
+{
+    "3_00001": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00001.png",
+        "name": "Aeng-du",
+        "flavor_text": "Blade Lineage",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Aeng-du_StandingSprite.png/271px-Aeng-du_StandingSprite.png?195c72"
+    },
+    "3_00002": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00002.png",
+        "name": "Jia Zheng",
+        "flavor_text": "H Corp.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Jia_Zheng_StandingSprite.png/187px-Jia_Zheng_StandingSprite.png?61da52"
+    },
+    "3_00003": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00003.png",
+        "name": "Ran",
+        "flavor_text": "Technology Liberation Association",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Ran_StandingSprite.png/302px-Ran_StandingSprite.png?b72d13"
+    },
+    "3_00004": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00004.png",
+        "name": "Starbuck",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Starbuck_StandingSprite.png/216px-Starbuck_StandingSprite.png?b0e713"
+    },
+    "3_00005": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00005.png",
+        "name": "Charon",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Charon_2_StandingSprite.png/408px-Charon_2_StandingSprite.png?e5b86a"
+    },
+    "3_00006": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00006.png",
+        "name": "Ahab",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Ahab_Sprite_1.png/202px-Ahab_Sprite_1.png?ecb38e"
+    },
+    "3_00007": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00007.png",
+        "name": "Lin Daiyu",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Lin_Daiyu_StandingSprite.png/193px-Lin_Daiyu_StandingSprite.png?376211"
+    },
+    "3_00008": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00008.png",
+        "name": "Dongrang",
+        "url": "https://limbuscompany.wiki.gg/images/Dongrang_StandingSprite.png",
+        "flavor_text": "A Limbus Company Character."
+    },
+    "3_00009": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00009.png",
+        "name": "Mayors",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Mayors_StandingSprite.png/231px-Mayors_StandingSprite.png?f5525e"
+    },
+    "3_00010": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00010.png",
+        "name": "Rain",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Rain_StandingSprite.png/251px-Rain_StandingSprite.png?bd8c75"
+    },
+    "3_00011": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00011.png",
+        "name": "Bari",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Bari_StandingSprite.png/397px-Bari_StandingSprite.png?b2813d"
+    },
+    "3_00012": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00012.png",
+        "name": "Dongbaek",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Dongbaek_StandingSprite.png/212px-Dongbaek_StandingSprite.png?c54f9c"
+    },
+    "3_00013": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00013.png",
+        "name": "Xue Pan",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Xue_Pan_StandingSprite.png/222px-Xue_Pan_StandingSprite.png?53a0cc"
+    },
+    "3_00014": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00014.png",
+        "name": "Paula",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Paula_StandingSprite.png/329px-Paula_StandingSprite.png?b033ac"
+    },
+    "3_00015": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00015.png",
+        "name": "Romero",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Romero_StandingSprite.png/223px-Romero_StandingSprite.png?5b9c43"
+    },
+    "3_00016": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00016.png",
+        "name": "Faust",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Faust_StandingSprite.png/435px-Faust_StandingSprite.png?92a087"
+    },
+    "3_00017": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00017.png",
+        "name": "Hermann",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Hermann_StandingSprite.png/232px-Hermann_StandingSprite.png?398a93"
+    },
+    "3_00018": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00018.png",
+        "name": "The Priest",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/The_Priest_StandingSprite.png/167px-The_Priest_StandingSprite.png?5724fb"
+    },
+    "3_00019": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00019.png",
+        "name": "Hopkins",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Hopkins_StandingSprite.png/242px-Hopkins_StandingSprite.png?f4a157"
+    },
+    "3_00020": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00020.png",
+        "name": "Dulcinea",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Dulcinea_StandingSprite.png/375px-Dulcinea_StandingSprite.png?903463"
+    },
+    "3_00021": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00021.png",
+        "name": "Daguanyuan's Jia Huan",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Jia_Huan_Baby_StandingSprite.png/182px-Jia_Huan_Baby_StandingSprite.png?56de1d"
+    },
+    "3_00022": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00022.png",
+        "name": "Heathcliff",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Heathcliff_Remember_StandingSprite.png/387px-Heathcliff_Remember_StandingSprite.png?7ca112"
+    },
+    "3_00023": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00023.png",
+        "name": "Han-ul",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Han-ul_StandingSprite.png/242px-Han-ul_StandingSprite.png?2f9584"
+    },
+    "3_00024": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00024.png",
+        "name": "Kong Youjin",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Kong_Youjin_StandingSprite.png/188px-Kong_Youjin_StandingSprite.png?4c3498"
+    },
+    "3_00025": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00025.png",
+        "name": "Mika",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Mika_StandingSprite.png/218px-Mika_StandingSprite.png?b7240c"
+    },
+    "3_00026": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00026.png",
+        "name": "Cesara",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Cesara_StandingSprite.png/185px-Cesara_StandingSprite.png?425d68"
+    },
+    "3_00027": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00027.png",
+        "name": "Jia Huan",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Jia_Huan_StandingSprite.png/239px-Jia_Huan_StandingSprite.png?e4dd8a"
+    },
+    "3_00028": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00028.png",
+        "name": "Fabius",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Fabius_StandingSprite.png/234px-Fabius_StandingSprite.png?48373c"
+    },
+    "3_00029": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00029.png",
+        "name": "Jia Qiu",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Jia_Qiu_StandingSprite.png/306px-Jia_Qiu_StandingSprite.png?6c0ef4"
+    },
+    "3_00030": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00030.png",
+        "name": "Sinclair",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Sinclair_StandingSprite.png/588px-Sinclair_StandingSprite.png?643776"
+    },
+    "3_00031": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00031.png",
+        "name": "Eunbong's Bar & Fryers Owner",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Eunbong%E2%80%99s_Bar_%26_Fryers_Owner_StandingSprite.png/246px-Eunbong%E2%80%99s_Bar_%26_Fryers_Owner_StandingSprite.png?2d498c"
+    },
+    "3_00032": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00032.png",
+        "name": "Xue Baochai",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Xue_Baochai_StandingSprite.png/323px-Xue_Baochai_StandingSprite.png?99d9a7"
+    },
+    "3_00033": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00033.png",
+        "name": "Erlking Heathcliff",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Erlking_Heathcliff_StandingSprite.png/291px-Erlking_Heathcliff_StandingSprite.png?977c62"
+    },
+    "3_00034": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00034.png",
+        "name": "Zigong",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Zigong_StandingSprite.png/208px-Zigong_StandingSprite.png?cdcd57"
+    },
+    "3_00035": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00035.png",
+        "name": "Stubb",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Stubb_StandingSprite.png/251px-Stubb_StandingSprite.png?6b9f01"
+    },
+    "3_00036": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00036.png",
+        "name": "Night Drifter",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Night_Drifter_StandingSprite.png/304px-Night_Drifter_StandingSprite.png?85f368"
+    },
+    "3_00037": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00037.png",
+        "name": "Ry%C5%8Dsh%C5%AB",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Ryoshu_StandingSprite.png/445px-Ryoshu_StandingSprite.png?ebe297"
+    },
+    "3_00038": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00038.png",
+        "name": "Johann",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Johann_StandingSprite.png/212px-Johann_StandingSprite.png?cd4587"
+    },
+    "3_00039": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00039.png",
+        "name": "Wang Dawei",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Wang_Dawei_StandingSprite.png/381px-Wang_Dawei_StandingSprite.png?ead03c"
+    },
+    "3_00040": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00040.png",
+        "name": "Camille",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Camille_StandingSprite.png/243px-Camille_StandingSprite.png?d6a567"
+    },
+    "3_00041": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00041.png",
+        "name": "Qingtao",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Qingtao_StandingSprite.png/165px-Qingtao_StandingSprite.png?8c7c28"
+    },
+    "3_00042": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00042.png",
+        "name": "Hohenheim",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Hohenheim_StandingSprite.png/229px-Hohenheim_StandingSprite.png?3c8bf1"
+    },
+    "3_00043": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00043.png",
+        "name": "La Manchaland%27s Don Quixote",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/La_Manchaland%27s_Don_Quixote_StandingSprite.png/295px-La_Manchaland%27s_Don_Quixote_StandingSprite.png?e7b8db"
+    },
+    "3_00044": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00044.png",
+        "name": "Hong Lu",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Hong_Lu_StandingSprite.png/478px-Hong_Lu_StandingSprite.png?a6ee6d"
+    },
+    "3_00045": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00045.png",
+        "name": "Linton",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Linton_StandingSprite.png/180px-Linton_StandingSprite.png?f46e1d"
+    },
+    "3_00046": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00046.png",
+        "name": "Nelly",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Nelly_StandingSprite.png/288px-Nelly_StandingSprite.png?8ec644"
+    },
+    "3_00047": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00047.png",
+        "name": "Zilu",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/Zilu_Casual_Sprite_1.png"
+    },
+    "3_00048": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00048.png",
+        "name": "Gubo",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Gubo_StandingSprite.png/259px-Gubo_StandingSprite.png?84420a"
+    },
+    "3_00049": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00049.png",
+        "name": "Hindley",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Hindley_StandingSprite.png/218px-Hindley_StandingSprite.png?bc0c73"
+    },
+    "3_00050": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00050.png",
+        "name": "Lady Wang",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Lady_Wang_StandingSprite.png/224px-Lady_Wang_StandingSprite.png?93aaf8"
+    },
+    "3_00051": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00051.png",
+        "name": "Jia Yuanchun",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Jia_Yuanchun_StandingSprite.png/318px-Jia_Yuanchun_StandingSprite.png?5f98f2"
+    },
+    "3_00052": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00052.png",
+        "name": "Jia Xichun",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Jia_Xichun_StandingSprite.png/276px-Jia_Xichun_StandingSprite.png?da5a2c"
+    },
+    "3_00053": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00053.png",
+        "name": "Aseah",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Aseah_StandingSprite.png/209px-Aseah_StandingSprite.png?51cac5"
+    },
+    "3_00054": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00054.png",
+        "name": "Gregor",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Gregor_StandingSprite.png/254px-Gregor_StandingSprite.png?59a890"
+    },
+    "3_00055": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00055.png",
+        "name": "The Indigo Elder",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Indigo_Elder_StandingSprite.png/219px-Indigo_Elder_StandingSprite.png?71d862"
+    },
+    "3_00056": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00056.png",
+        "name": "Hugo",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Hugo_StandingSprite.png/284px-Hugo_StandingSprite.png?cb5b0d"
+    },
+    "3_00057": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00057.png",
+        "name": "Queequeg",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Queequeg_StandingSprite.png/266px-Queequeg_StandingSprite.png?76b3c1"
+    },
+    "3_00058": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00058.png",
+        "name": "Kromer",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Kromer_StandingSprite.png/444px-Kromer_StandingSprite.png?3632c3"
+    },
+    "3_00059": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00059.png",
+        "name": "Vergilius",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Vergilius_StandingSprite.png/222px-Vergilius_StandingSprite.png?9c8166"
+    },
+    "3_00060": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00060.png",
+        "name": "Niko",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Niko_StandingSprite.png/364px-Niko_StandingSprite.png?adebe5"
+    },
+    "3_00061": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00061.png",
+        "name": "Xiren",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Xiren_StandingSprite.png/212px-Xiren_StandingSprite.png?899df7"
+    },
+    "3_00062": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00062.png",
+        "name": "Bodhisattva Chicken%27s Manager",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Bodhisattva_Chicken%27s_Manager_StandingSprite.png/185px-Bodhisattva_Chicken%27s_Manager_StandingSprite.png?a81b12"
+    },
+    "3_00063": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00063.png",
+        "name": "Rodion",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Rodion_StandingSprite.png/243px-Rodion_StandingSprite.png?56bac0"
+    },
+    "3_00064": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00064.png",
+        "name": "Shi Yihua",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Shi_Yihua_StandingSprite.png/156px-Shi_Yihua_StandingSprite.png?102c98"
+    },
+    "3_00065": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00065.png",
+        "name": "Wang Zhao",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Wang_Zhao_StandingSprite.png/286px-Wang_Zhao_StandingSprite.png?dfeeb2"
+    },
+    "3_00066": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00066.png",
+        "name": "Pilot",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Pilot_Clean_StandingSprite.png/179px-Pilot_Clean_StandingSprite.png?66dd33"
+    },
+    "3_00067": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00067.png",
+        "name": "Shan San",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Shan_San_StandingSprite.png/201px-Shan_San_StandingSprite.png?d21780"
+    },
+    "3_00068": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00068.png",
+        "name": "Cassetti",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Cassetti_StandingSprite.png/271px-Cassetti_StandingSprite.png?9908ec"
+    },
+    "3_00069": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00069.png",
+        "name": "Olga",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Olga_StandingSprite.png/193px-Olga_StandingSprite.png?e980ed"
+    },
+    "3_00070": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00070.png",
+        "name": "Outis",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Outis_StandingSprite.png/227px-Outis_StandingSprite.png?9f233f"
+    },
+    "3_00071": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00071.png",
+        "name": "Catherine",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Catherine_StandingSprite.png/294px-Catherine_StandingSprite.png?99d323"
+    },
+    "3_00072": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00072.png",
+        "name": "Herbert",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Herbert_Exec._StandingSprite.png/196px-Herbert_Exec._StandingSprite.png?27df47"
+    },
+    "3_00073": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00073.png",
+        "name": "Shrenne",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Shrenne_StandingSprite.png/214px-Shrenne_StandingSprite.png?24d9e3"
+    },
+    "3_00074": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00074.png",
+        "name": "Saude",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Saude_StandingSprite.png/191px-Saude_StandingSprite.png?3183f9"
+    },
+    "3_00075": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00075.png",
+        "name": "Wang Ren",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Wang_Ren_StandingSprite.png/170px-Wang_Ren_StandingSprite.png?ac9a71"
+    },
+    "3_00076": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00076.png",
+        "name": "Don Quixote",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Don_Quixote_StandingSprite.png/202px-Don_Quixote_StandingSprite.png?33af39"
+    },
+    "3_00077": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00077.png",
+        "name": "Marile",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Marile_StandingSprite.png/241px-Marile_StandingSprite.png?ac15d7"
+    },
+    "3_00078": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00078.png",
+        "name": "Every Catherine",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Every_Catherine_Sprite_1.png/363px-Every_Catherine_Sprite_1.png?231509"
+    },
+    "3_00079": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00079.png",
+        "name": "Effie",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Effie_StandingSprite.png/323px-Effie_StandingSprite.png?b95be9"
+    },
+    "3_00080": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00080.png",
+        "name": "Aya",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Aya_StandingSprite.png/404px-Aya_StandingSprite.png?da453f"
+    },
+    "3_00081": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00081.png",
+        "name": "Wei",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Wei_StandingSprite.png/182px-Wei_StandingSprite.png?6c5ac0"
+    },
+    "3_00082": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00082.png",
+        "name": "Pip",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Pip_StandingSprite.png/184px-Pip_StandingSprite.png?23f603"
+    },
+    "3_00083": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00083.png",
+        "name": "Yi Sang",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Yi_Sang_StandingSprite.png/222px-Yi_Sang_StandingSprite.png?192697"
+    },
+    "3_00084": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00084.png",
+        "name": "Lei Heng",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Lei_Heng_StandingSprite.png/249px-Lei_Heng_StandingSprite.png?4065ec"
+    },
+    "3_00085": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00085.png",
+        "name": "Kong Sihui",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Kong_Sihui_StandingSprite.png/255px-Kong_Sihui_StandingSprite.png?4196f7"
+    },
+    "3_00086": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00086.png",
+        "name": "Ricardo",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Ricardo_StandingSprite.png/412px-Ricardo_StandingSprite.png?8a416c"
+    },
+    "3_00087": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00087.png",
+        "name": "Ishmael",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Ishmael_StandingSprite.png/395px-Ishmael_StandingSprite.png?aa5486"
+    },
+    "3_00088": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00088.png",
+        "name": "The Barber",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/The_Barber_StandingSprite.png/396px-The_Barber_StandingSprite.png?7e9088"
+    },
+    "3_00089": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00089.png",
+        "name": "Garion",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Garion_StandingSprite.png/247px-Garion_StandingSprite.png?4a705a"
+    },
+    "3_00090": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00090.png",
+        "name": "Jia Mu",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Jia_Mu_StandingSprite.png/424px-Jia_Mu_StandingSprite.png?bc306e"
+    },
+    "3_00091": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00091.png",
+        "name": "Yuri",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Yuri_StandingSprite.png/405px-Yuri_StandingSprite.png?ef5d41"
+    },
+    "3_00092": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00092.png",
+        "name": "Alessio",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Alessio_StandingSprite.png/193px-Alessio_StandingSprite.png?abbb82"
+    },
+    "3_00093": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00093.png",
+        "name": "Smee",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Smee_StandingSprite.png/217px-Smee_StandingSprite.png?39f343"
+    },
+    "3_00094": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00094.png",
+        "name": "Josephine",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Josephine_StandingSprite.png/231px-Josephine_StandingSprite.png?208655"
+    },
+    "3_00095": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00095.png",
+        "name": "Meursault",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Meursault_StandingSprite.png/242px-Meursault_StandingSprite.png?4e94f2"
+    },
+    "3_00096": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00096.png",
+        "name": "Samjo",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Samjo_StandingSprite.png/228px-Samjo_StandingSprite.png?d52a33"
+    },
+    "3_00097": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00097.png",
+        "name": "Alfonso",
+        "flavor_text": "A Limbus Company Character.",
+        "url": "https://limbuscompany.wiki.gg/images/Alfonso_Sprite_1.png"
+    }
+}

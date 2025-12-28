@@ -1,0 +1,149 @@
+.card-container {
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    will-change: transform, opacity;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.4);
+    /* Darker semi-transparent background */
+    backdrop-filter: blur(10px);
+    /* Glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    color: white;
+}
+
+.card-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card-age {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: normal;
+}
+
+.card-bio {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+.card-container.enter-left {
+    animation: enterFromLeft 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.card-container.enter-right {
+    animation: enterFromRight 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Default slideIn or no animation for first load could be handled here if desired */
+
+.swipe-left {
+    animation: flyOutLeft 0.5s forwards;
+}
+
+.swipe-right {
+    animation: flyOutRight 0.5s forwards;
+}
+
+@keyframes flyOutLeft {
+    0% {
+        transform: translate(0, 0) rotate(var(--tilt));
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-150vw, 50px) rotate(-30deg);
+        opacity: 1;
+    }
+}
+
+@keyframes flyOutRight {
+    0% {
+        transform: translate(0, 0) rotate(var(--tilt));
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(150vw, 50px) rotate(30deg);
+        opacity: 1;
+    }
+}
+
+@keyframes enterFromLeft {
+    from {
+        transform: translate(-100%, 0) rotate(0deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0, 0) rotate(var(--tilt));
+        opacity: 1;
+    }
+}
+
+@keyframes enterFromRight {
+    from {
+        transform: translate(100%, 0) rotate(0deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0, 0) rotate(var(--tilt));
+        opacity: 1;
+    }
+}
