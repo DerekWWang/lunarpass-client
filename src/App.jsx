@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import './App.css'
 import { Card } from './components/Card'
 import { SideMenu } from './components/SideMenu'
+import { StatsPage } from './components/StatsPage'
 
 const CHARACTER_GROUPS = {
   "limbus": { id: "limbus", name: "Limbus Company", url: "/limbus.json" },
@@ -26,6 +27,11 @@ function App() {
     const saved = localStorage.getItem('lunarpass-history');
     return saved ? JSON.parse(saved) : {};
   });
+  const [smashShake, setSmashShake] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
+  const [warningMessage, setWarningMessage] = useState("You have not made a choice for this city dweller yet.");
+  const [showStats, setShowStats] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Persist history to localStorage
   useEffect(() => {
@@ -57,8 +63,9 @@ function App() {
             group: groupKey,
             name: item.name,
             bio: item.flavor_text,
-            image: item.image_path.replace('/Users/derekzhu/Code/lunarpass/media', '/media'),
+            image: item.image_path.replace('/Users/derekzhu/Code/lunarpass/mooncrawler/downloads', '/media'),
             url: item.url,
+            is_sus: item.is_sus || false,
             age: null
           }));
         });
@@ -102,26 +109,30 @@ function App() {
       setIndex(firstUnplayedIndex);
     } else {
       // All finished? Go to end or keep current if valid.
-      if (index >= profiles.length) {
-        setIndex(0); // or handle "all done"
-      }
+      // We don't loop here automatically anymore if we want a stats page.
+      // If index >= length, we let it stay there to show stats.
     }
     // We deliberately depend on `profiles` (which changes when groups change).
     // We do NOT depend on `index` here to avoid reset loops.
-  }, [profiles, history]); // Added history dependency so it auto-advances if we somehow manually manipulated it, but mostly for the profile change.
+    // We also remove `history` from dependencies so this only runs when the *set* of profiles changes,
+    // explicitly for the "Group Toggle" resumption feature.
+    // Normal gameplay updates history, which shouldn't trigger this "seek" logic.
+  }, [profiles]);
 
   const currentProfile = profiles[index];
   const nextProfile = profiles[(index + 1) % profiles.length];
 
-  const handleToggleGroup = (groupKey) => {
-    setEnabledGroups(prev => ({
-      ...prev,
-      [groupKey]: !prev[groupKey]
-    }));
-  };
+
 
   const handleSwipe = (direction) => {
-    if (swipeDirection || profiles.length === 0) return;
+    if (swipeDirection || profiles.length === 0 || !currentProfile) return;
+
+    // Sus Check
+    if (direction === 'left' && currentProfile.is_sus) {
+      setSmashShake(true);
+      setTimeout(() => setSmashShake(false), 500); // Duration matches CSS animation
+      return;
+    }
 
     // Update history
     setHistory(prev => ({
@@ -132,20 +143,66 @@ function App() {
     setSwipeDirection(direction);
 
     setTimeout(() => {
-      setLastSwipeDirection(direction); // Set this so NEXT card knows where to enter FROM
-      setIndex((prevIndex) => (prevIndex + 1) % profiles.length);
+      setLastSwipeDirection(direction);
+      // Move to next card, do NOT wrap around if we want end state.
+      // We increment index. If it exceeds length, we render Stats.
+      setIndex((prevIndex) => prevIndex + 1);
       setSwipeDirection(null);
       // Generate new random tilt for the incoming card
       setTilt(Math.random() * 10 - 5);
     }, 500);
   };
 
+  // Prevent wrapping in handleForward too
+  const handleForward = () => {
+    if (!currentProfile) return;
+
+    // Check if choice made
+    if (history[currentProfile.id]) {
+      // Allow forward
+      setIndex(prevIndex => prevIndex + 1);
+      setSwipeDirection(null);
+      setLastSwipeDirection(null);
+    } else {
+      // Deny forward
+      setWarningMessage("You have not made a choice for this city dweller yet.");
+      setShowWarning(true);
+    }
+  };
+
+  const handleToggleGroup = (groupKey) => {
+    // If disabling...
+    if (enabledGroups[groupKey]) {
+      // Check if any history items belong to this group
+      // We need to look up which IDs belong to this group.
+      // Since `profiles` is filtered, we look at `allProfiles`
+      const groupProfileIds = allProfiles
+        .filter(p => p.group === groupKey)
+        .map(p => p.id);
+
+      const hasHistory = groupProfileIds.some(id => history[id]);
+
+      if (hasHistory) {
+        setWarningMessage("You cannot unselect characterset when you have already made choices.");
+        setShowWarning(true);
+        return;
+      }
+    }
+
+    setEnabledGroups(prev => ({
+      ...prev,
+      [groupKey]: !prev[groupKey]
+    }));
+  };
+
   const handleReset = () => {
     if (window.confirm('Are you sure you want to reset your history? This cannot be undone.')) {
       setHistory({});
       localStorage.removeItem('lunarpass-history');
+
       setIndex(0);
       localStorage.removeItem('lunarpass-index');
+
       setSwipeDirection(null);
       setLastSwipeDirection(null);
     }
@@ -178,18 +235,25 @@ function App() {
         handleSwipe('right');
       } else if (e.key === 'ArrowDown') {
         // Backtracking
-        setIndex(prevIndex => (prevIndex - 1 + profiles.length) % profiles.length);
+        setIndex(prevIndex => Math.max(0, prevIndex - 1));
         setSwipeDirection(null);
         setLastSwipeDirection(null);
+      } else if (e.key === 'ArrowUp') {
+        handleForward();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [swipeDirection, profiles.length]);
+  }, [swipeDirection, profiles.length, handleSwipe, handleForward]);
 
   if (profiles.length === 0) {
     return <div className="app-container"><div className="loading">Loading profiles...</div></div>;
+  }
+
+  // Show Stats if done
+  if (index >= profiles.length) {
+    return <StatsPage history={history} allProfiles={allProfiles} onRestart={handleReset} />;
   }
 
   // Pass CSS variable for tilt to be used in animations
@@ -199,10 +263,28 @@ function App() {
 
   return (
     <div className="app-container">
+      <header className="app-header">
+        <button
+          className="btn-menu"
+          onClick={() => setIsMenuOpen(true)}
+          aria-label="Open Menu"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <h1>Lunarpass</h1>
+        <button className="btn-stats" onClick={() => setShowStats(true)}>Stats</button>
+      </header>
+
       <SideMenu
         characterGroups={CHARACTER_GROUPS}
         enabledGroups={enabledGroups}
         onToggleGroup={handleToggleGroup}
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
       />
       <div className="card-stack">
         <Card
@@ -226,7 +308,7 @@ function App() {
       <div className="controls">
         <button
           onClick={() => handleSwipe('left')}
-          className={`btn btn-smash ${history[currentProfile?.id] === 'smash' ? 'active-choice' : ''}`}
+          className={`btn btn-smash ${history[currentProfile?.id] === 'smash' ? 'active-choice' : ''} ${smashShake ? 'shake' : ''}`}
         >
           Smash <span>({smashCount})</span>
         </button>
@@ -242,7 +324,26 @@ function App() {
         Reset History
       </button>
 
-      <p className="instruction">Left Arrow = Smash | Right Arrow = Pass | Down Arrow = Previous</p>
+      <p className="instruction">Left Arrow = Smash | Right Arrow = Pass | Down/Up Arrow = Nav</p>
+
+      {showWarning && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>Hold on!</h3>
+            <p>{warningMessage}</p>
+            <button onClick={() => setShowWarning(false)} className="btn-close-modal">Okay</button>
+          </div>
+        </div>
+      )}
+
+      {showStats && (
+        <StatsPage
+          history={history}
+          allProfiles={allProfiles}
+          onRestart={handleReset}
+          onClose={() => setShowStats(false)}
+        />
+      )}
     </div>
   )
 }

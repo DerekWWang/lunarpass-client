@@ -1,7 +1,11 @@
 .card-container {
     position: absolute;
-    width: 300px;
-    height: 600px;
+    width: 85vw;
+    /* Responsive width */
+    max-width: 300px;
+    /* Cap at original width */
+    height: 100%;
+    /* Fill the stack container (which is now vh-based) */
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
