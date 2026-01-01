@@ -7,6 +7,7 @@ import { StatsPage } from './components/StatsPage'
 const CHARACTER_GROUPS = {
   "limbus": { id: "limbus", name: "Limbus Company", url: "/limbus.json" },
   "leviathan": { id: "leviathan", name: "Leviathan", url: "/leviathan.json" },
+  "distortion Detective": { id: "distortiondetective", name: "Distortion Detective", url: "/ddetective.json" },
 };
 
 function App() {
@@ -47,10 +48,7 @@ function App() {
   const smashCount = Object.values(history).filter(action => action === 'smash').length;
   const passCount = Object.values(history).filter(action => action === 'pass').length;
 
-  const characterGroups = {
-    "limbus": { id: 3, name: "/limbus.json" },
-    "leviathan": { id: 4, name: "/leviathan.json" },
-  }
+
 
   useEffect(() => {
     const fetchAllData = async () => {

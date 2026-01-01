@@ -1,0 +1,38 @@
+{
+    "5_00001": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00001.png",
+        "name": "Moses",
+        "flavor_text": "Limbus Company",
+        "url": "https://limbuscompany.wiki.gg/images/Moses_StandingSprite.png?5916ec"
+    },
+    "5_00002": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00002.png",
+        "name": "Ezra",
+        "flavor_text": "Limbus Company",
+        "url": "https://limbuscompany.wiki.gg/images/Ezra_StandingSprite.png?f98c68"
+    },
+    "5_00003": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00003.png",
+        "name": "YuRia",
+        "flavor_text": "YuRia Workshop",
+        "url": "https://limbuscompany.wiki.gg/images/thumb/YuRia.png/800px-YuRia.png?d8398a"
+    },
+    "5_00004": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00004.png",
+        "name": "Vespa",
+        "flavor_text": "Limbus Company",
+        "url": "https://limbuscompany.wiki.gg/images/Vespa1.png"
+    },
+    "5_00005": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00005.png",
+        "name": "Dias",
+        "flavor_text": "Udjat",
+        "url": "https://limbuscompany.wiki.gg/images/Dias.png?28d0e8"
+    },
+    "5_00006": {
+        "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00006.png",
+        "name": "Han Hee-Joon",
+        "flavor_text": "Seven Association",
+        "url": "https://limbuscompany.wiki.gg/images/Han_Hee-joon.png?2f50b6"
+    }
+}
