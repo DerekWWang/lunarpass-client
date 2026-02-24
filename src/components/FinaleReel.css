@@ -32,7 +32,7 @@
         rgba(200, 220, 255, 0.5) 60%,
         transparent 100%
     );
-    animation: lightBeam 2.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: lightBeam 3.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes lightBeam {
@@ -71,6 +71,13 @@
     align-items: center;
     padding: 0 20px;
     will-change: transform;
+    animation: reelFadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes reelFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .reel-spacer {

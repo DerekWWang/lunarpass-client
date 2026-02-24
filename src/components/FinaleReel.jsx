@@ -10,7 +10,7 @@ export const FinaleReel = ({ profiles, history, characterGroups, onReset, onDone
 
     useEffect(() => {
         if (phase === 'beam') {
-            const timer = setTimeout(() => setPhase('reel'), 2800);
+            const timer = setTimeout(() => setPhase('reel'), 3800);
             return () => clearTimeout(timer);
         }
     }, [phase]);
@@ -72,7 +72,7 @@ export const FinaleReel = ({ profiles, history, characterGroups, onReset, onDone
                     <div className="reel-fade reel-fade-top" />
                     <div className="reel-fade reel-fade-bottom" />
 
-                    <div className="reel-content" ref={reelContentRef}>
+                    <div className="reel-content" ref={reelContentRef} style={{ transform: 'translateY(100vh)' }}>
                         <div className="reel-spacer" />
                         {Object.entries(grouped).map(([groupKey, groupProfiles]) => (
                             <div key={groupKey} className="reel-group">
