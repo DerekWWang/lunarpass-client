@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -452,7 +452,7 @@ body {
 .app-header h1 {
   margin: 0;
   font-size: 3rem;
-  font-family: 'Gill Sans MT', 'Gill Sans', 'Calibri', sans-serif;
+  font-family: 'Raleway', 'Gill Sans MT', 'Gill Sans', sans-serif;
   color: #fdf5e6;
   text-shadow:
     0 0 8px rgba(255, 248, 220, 0.5),
