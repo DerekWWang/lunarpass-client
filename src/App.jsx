@@ -1,9 +1,10 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import './App.css'
 import { Card } from './components/Card'
 import { SideMenu } from './components/SideMenu'
 import { StatsPage } from './components/StatsPage'
 import { FinaleReel } from './components/FinaleReel'
+import { fetchCharacterStats, submitAllResults } from './lib/db'
 
 const CHARACTER_GROUPS = {
   "limbus": { id: "limbus", name: "Limbus Company", url: "/limbus.json" },
@@ -36,6 +37,8 @@ function App() {
   const [showStats, setShowStats] = useState(false);
   const [showFinale, setShowFinale] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [communityStats, setCommunityStats] = useState(null);
+  const hasSubmitted = useRef(false);
 
   // Persist history to localStorage
   useEffect(() => {
@@ -50,8 +53,6 @@ function App() {
   // Derived stats
   const smashCount = Object.values(history).filter(action => action === 'smash').length;
   const passCount = Object.values(history).filter(action => action === 'pass').length;
-
-
 
   useEffect(() => {
     const fetchAllData = async () => {
@@ -151,6 +152,16 @@ function App() {
       [currentProfile.id]: direction === 'left' ? 'smash' : 'pass'
     }));
 
+    // Fetch community stats for this character
+    const userChoice = direction === 'left' ? 'smash' : 'pass';
+    const profileName = currentProfile.name;
+    const profileId = currentProfile.id;
+    fetchCharacterStats(profileId).then(stats => {
+      if (stats) {
+        setCommunityStats({ name: profileName, userChoice, ...stats });
+      }
+    });
+
     const willFinish = index + 1 >= profiles.length;
 
     setSwipeDirection(direction);
@@ -161,6 +172,7 @@ function App() {
       setSwipeDirection(null);
       setTilt(Math.random() * 10 - 5);
       if (willFinish) {
+        setCommunityStats(null);
         setShowFinale(true);
       }
     }, 500);
@@ -218,8 +230,17 @@ function App() {
 
       setSwipeDirection(null);
       setLastSwipeDirection(null);
+      hasSubmitted.current = false;
+      setCommunityStats(null);
     }
   };
+
+  // Submit all results to the DB when the finale starts
+  useEffect(() => {
+    if (!showFinale || hasSubmitted.current) return;
+    hasSubmitted.current = true;
+    submitAllResults(history);
+  }, [showFinale]);
 
   useEffect(() => {
     if (profiles.length === 0) return;
@@ -275,6 +296,8 @@ function App() {
     setSwipeDirection(null);
     setLastSwipeDirection(null);
     setShowFinale(false);
+    hasSubmitted.current = false;
+    setCommunityStats(null);
   };
 
   if (index >= profiles.length) {
@@ -311,7 +334,7 @@ function App() {
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
-        <h1>Lunarpass</h1>
+        <h1>moonpass</h1>
         <button className="btn-stats" onClick={() => setShowStats(true)} aria-label="View Stats">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <rect x="18" y="3" width="4" height="18" rx="1"></rect>
@@ -353,15 +376,43 @@ function App() {
           onClick={() => handleSwipe('left')}
           className={`btn btn-smash ${history[currentProfile?.id] === 'smash' ? 'active-choice' : ''} ${smashShake ? 'shake' : ''}`}
         >
-          Smash <span>({smashCount})</span>
+          <span className="btn-label">Smash</span>
+          <span className="btn-count">{smashCount}</span>
         </button>
         <button
           onClick={() => handleSwipe('right')}
           className={`btn btn-pass ${history[currentProfile?.id] === 'pass' ? 'active-choice' : ''}`}
         >
-          Pass <span>({passCount})</span>
+          <span className="btn-label">Pass</span>
+          <span className="btn-count">{passCount}</span>
         </button>
       </div>
+
+      {communityStats && (() => {
+        const total = communityStats.smashes + communityStats.passes;
+        const smashPct = total > 0 ? Math.round((communityStats.smashes / total) * 100) : 0;
+        const passPct = total > 0 ? 100 - smashPct : 0;
+        const agreePct = communityStats.userChoice === 'smash' ? smashPct : passPct;
+        return (
+          <div className="community-stats" key={communityStats.name}>
+            <p className="community-stats-title">
+              What others chose for <strong>{communityStats.name}</strong>
+            </p>
+            <div className="community-stats-row">
+              <div className="community-bar pass-bar" style={{ flex: passPct || 1 }}></div>
+              <div className={`community-agree ${communityStats.userChoice === 'smash' ? 'agree-smash' : 'agree-pass'}`}>
+                <span className="community-agree-pct">{agreePct}%</span>
+                <span className="community-agree-label">agreed</span>
+              </div>
+              <div className="community-bar smash-bar" style={{ flex: smashPct || 1 }}></div>
+            </div>
+            <div className="community-counts">
+              <span className="count-pass">{communityStats.passes} Passed</span>
+              <span className="count-smash">{communityStats.smashes} Smashed</span>
+            </div>
+          </div>
+        );
+      })()}
 
       <button onClick={handleReset} className="btn-reset">
         Reset History
@@ -387,6 +438,7 @@ function App() {
           onClose={() => setShowStats(false)}
         />
       )}
+
     </div>
   )
 }

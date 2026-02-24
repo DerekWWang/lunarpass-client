@@ -71,13 +71,13 @@ body {
 
   .controls {
     margin-top: 10px;
-    gap: 20px;
+    gap: 16px;
   }
 
   .btn {
-    padding: 10px 25px;
-    min-width: 100px;
-    font-size: 14px;
+    padding: 10px 20px;
+    min-width: 110px;
+    font-size: 12px;
   }
 
   .btn-reset {
@@ -93,62 +93,85 @@ body {
 
 /* Controls */
 .controls {
-  margin-top: 30px;
   display: flex;
-  gap: 40px;
-  /* Wider gap */
+  gap: 24px;
   z-index: 20;
 }
 
 .btn {
-  padding: 15px 40px;
-  /* Rectangle pill shape */
-  min-width: 120px;
-  height: auto;
-  border-radius: 50px;
-  /* Pill radius */
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
+  padding: 14px 28px;
+  min-width: 130px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.2s, box-shadow 0.3s, border-color 0.3s, background 0.3s;
 }
 
 .btn:active {
-  transform: scale(0.9);
+  transform: scale(0.93);
+}
+
+.btn-label {
+  flex-shrink: 0;
+}
+
+.btn-count {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-shadow: 0 0 10px currentColor;
 }
 
 .btn-smash {
-  background-color: white;
+  background: rgba(76, 209, 55, 0.08);
   color: #4cd137;
-  /* Green for Smash */
-  border: 3px solid #4cd137;
+  border-color: rgba(76, 209, 55, 0.2);
+  box-shadow: 0 4px 20px rgba(76, 209, 55, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btn-smash:hover {
+  background: rgba(76, 209, 55, 0.14);
+  border-color: rgba(76, 209, 55, 0.35);
+  box-shadow: 0 4px 25px rgba(76, 209, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
 }
 
 .btn-pass {
-  background-color: white;
+  background: rgba(236, 94, 111, 0.08);
   color: #ec5e6f;
-  /* Red for Pass */
-  border: 3px solid #ec5e6f;
+  border-color: rgba(236, 94, 111, 0.2);
+  box-shadow: 0 4px 20px rgba(236, 94, 111, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btn-pass:hover {
+  background: rgba(236, 94, 111, 0.14);
+  border-color: rgba(236, 94, 111, 0.35);
+  box-shadow: 0 4px 25px rgba(236, 94, 111, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
 }
 
 .btn-smash.active-choice {
-  box-shadow: 0 0 20px #4cd137, 0 0 40px rgba(76, 209, 55, 0.5);
-  transform: scale(1.05);
-  background-color: #f0fff0;
+  background: rgba(76, 209, 55, 0.18);
+  border-color: rgba(76, 209, 55, 0.5);
+  box-shadow: 0 0 20px rgba(76, 209, 55, 0.25), 0 0 40px rgba(76, 209, 55, 0.1);
+  transform: scale(1.04);
 }
 
 .btn-pass.active-choice {
-  box-shadow: 0 0 20px #ec5e6f, 0 0 40px rgba(236, 94, 111, 0.5);
-  transform: scale(1.05);
-  background-color: #fff0f0;
+  background: rgba(236, 94, 111, 0.18);
+  border-color: rgba(236, 94, 111, 0.5);
+  box-shadow: 0 0 20px rgba(236, 94, 111, 0.25), 0 0 40px rgba(236, 94, 111, 0.1);
+  transform: scale(1.04);
 }
 
 .progress-indicator {
@@ -467,4 +490,123 @@ body {
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+}
+
+/* Community Stats */
+.community-stats {
+  margin-top: 16px;
+  width: 85vw;
+  max-width: 300px;
+  animation: statsFadeIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.community-stats-title {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 10px 0;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.community-stats-title strong {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.community-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+}
+
+.community-bar {
+  height: 100%;
+  border-radius: 8px;
+  min-width: 6px;
+  transition: flex 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.pass-bar {
+  background: rgba(236, 94, 111, 0.25);
+  border: 1px solid rgba(236, 94, 111, 0.15);
+}
+
+.smash-bar {
+  background: rgba(76, 209, 55, 0.25);
+  border: 1px solid rgba(76, 209, 55, 0.15);
+}
+
+.community-agree {
+  width: 64px;
+  height: 56px;
+  min-width: 64px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.community-agree-pct {
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.community-agree-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  color: white;
+}
+
+.agree-smash {
+  border-color: rgba(76, 209, 55, 0.3);
+}
+
+.agree-smash .community-agree-pct {
+  color: #4cd137;
+}
+
+.agree-pass {
+  border-color: rgba(236, 94, 111, 0.3);
+}
+
+.agree-pass .community-agree-pct {
+  color: #ec5e6f;
+}
+
+.community-counts {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 2px 0;
+}
+
+.count-pass {
+  color: #ec5e6f;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.count-smash {
+  color: #4cd137;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+@keyframes statsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
