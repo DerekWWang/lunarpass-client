@@ -38,6 +38,7 @@ function App() {
   const [showFinale, setShowFinale] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [communityStats, setCommunityStats] = useState(null);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
   const hasSubmitted = useRef(false);
 
   // Persist history to localStorage
@@ -221,18 +222,21 @@ function App() {
   };
 
   const handleReset = () => {
-    if (window.confirm('Are you sure you want to reset your history? This cannot be undone.')) {
-      setHistory({});
-      localStorage.removeItem('lunarpass-history');
+    setShowResetConfirm(true);
+  };
 
-      setIndex(0);
-      localStorage.removeItem('lunarpass-index');
+  const confirmReset = () => {
+    setHistory({});
+    localStorage.removeItem('lunarpass-history');
 
-      setSwipeDirection(null);
-      setLastSwipeDirection(null);
-      hasSubmitted.current = false;
-      setCommunityStats(null);
-    }
+    setIndex(0);
+    localStorage.removeItem('lunarpass-index');
+
+    setSwipeDirection(null);
+    setLastSwipeDirection(null);
+    hasSubmitted.current = false;
+    setCommunityStats(null);
+    setShowResetConfirm(false);
   };
 
   // Submit all results to the DB when the finale starts
@@ -308,7 +312,7 @@ function App() {
           history={history}
           characterGroups={CHARACTER_GROUPS}
           onReset={handleFinaleReset}
-          onDone={() => setShowFinale(false)}
+          onDone={() => { setShowFinale(false); setIndex(0); }}
         />
       );
     }
@@ -394,7 +398,7 @@ function App() {
         const passPct = total > 0 ? 100 - smashPct : 0;
         const agreePct = communityStats.userChoice === 'smash' ? smashPct : passPct;
         return (
-          <div className="community-stats" key={communityStats.name}>
+          <div className="community-stats">
             <p className="community-stats-title">
               What others chose for <strong>{communityStats.name}</strong>
             </p>
@@ -418,7 +422,11 @@ function App() {
         Reset History
       </button>
 
-      <p className="instruction">Left Arrow = Smash | Right Arrow = Pass | Down/Up Arrow = Nav</p>
+      <div className="instruction">
+        <div><kbd>&larr;</kbd> Smash</div>
+        <div><kbd>&rarr;</kbd> Pass</div>
+        <div><kbd>&darr;</kbd><kbd>&uarr;</kbd> Navigate</div>
+      </div>
 
       {showWarning && (
         <div className="modal-overlay">
@@ -426,6 +434,19 @@ function App() {
             <h3>Hold on!</h3>
             <p>{warningMessage}</p>
             <button onClick={() => setShowWarning(false)} className="btn-close-modal">Okay</button>
+          </div>
+        </div>
+      )}
+
+      {showResetConfirm && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>Reset History?</h3>
+            <p>Are you sure you want to reset all your choices? This cannot be undone.</p>
+            <div className="modal-buttons">
+              <button onClick={() => setShowResetConfirm(false)} className="btn-modal-cancel">Cancel</button>
+              <button onClick={confirmReset} className="btn-modal-confirm">Reset</button>
+            </div>
           </div>
         </div>
       )}

@@ -3,10 +3,10 @@ import './FinaleReel.css';
 
 export const FinaleReel = ({ profiles, history, characterGroups, onReset, onDone }) => {
     const [phase, setPhase] = useState('beam');
-    const [isFast, setIsFast] = useState(false);
+    const [speedMultiplier, setSpeedMultiplier] = useState(1);
     const reelContentRef = useRef(null);
     const scrollPosRef = useRef(0);
-    const isFastRef = useRef(false);
+    const speedRef = useRef(1);
 
     useEffect(() => {
         if (phase === 'beam') {
@@ -29,7 +29,7 @@ export const FinaleReel = ({ profiles, history, characterGroups, onReset, onDone
             const delta = (time - lastTime) / 1000;
             lastTime = time;
 
-            const speed = isFastRef.current ? BASE_SPEED * 2 : BASE_SPEED;
+            const speed = BASE_SPEED * speedRef.current;
             scrollPosRef.current += speed * delta;
             el.style.transform = `translateY(calc(100vh - ${scrollPosRef.current}px))`;
 
@@ -47,8 +47,8 @@ export const FinaleReel = ({ profiles, history, characterGroups, onReset, onDone
 
     const handleClick = () => {
         if (phase === 'reel') {
-            isFastRef.current = !isFastRef.current;
-            setIsFast(prev => !prev);
+            speedRef.current *= 2;
+            setSpeedMultiplier(speedRef.current);
         }
     };
 
@@ -97,7 +97,7 @@ export const FinaleReel = ({ profiles, history, characterGroups, onReset, onDone
                     </div>
 
                     <div className="speed-indicator">
-                        {isFast ? '\u25B6\u25B6 2\u00D7 \u00B7 click to slow down' : '\u25B6 click to speed up'}
+                        {speedMultiplier > 1 ? `${'▶'.repeat(Math.min(Math.log2(speedMultiplier) + 1, 5))} ${speedMultiplier}× · click to go faster` : '▶ click to speed up'}
                     </div>
                 </>
             )}
