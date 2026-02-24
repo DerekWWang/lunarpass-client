@@ -1,0 +1,249 @@
+/* ═══════ Overlay ═══════ */
+.finale-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    z-index: 200;
+    overflow: hidden;
+    cursor: default;
+}
+
+.finale-overlay.phase-reel {
+    cursor: pointer;
+}
+
+/* ═══════ Beam Phase ═══════ */
+.beam-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.beam {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(240, 248, 255, 0.95) 30%,
+        rgba(200, 220, 255, 0.5) 60%,
+        transparent 100%
+    );
+    animation: lightBeam 2.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes lightBeam {
+    0% {
+        transform: scaleY(0) scaleX(0.004);
+        opacity: 0.6;
+    }
+    10% {
+        opacity: 1;
+    }
+    40% {
+        transform: scaleY(1) scaleX(0.004);
+        opacity: 1;
+    }
+    75% {
+        transform: scaleY(1) scaleX(1);
+        opacity: 1;
+    }
+    88% {
+        transform: scaleY(1) scaleX(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(1) scaleX(1);
+        opacity: 0;
+    }
+}
+
+/* ═══════ Reel Phase ═══════ */
+.reel-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    will-change: transform;
+}
+
+.reel-spacer {
+    height: 60vh;
+    flex-shrink: 0;
+}
+
+.reel-fade {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 120px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.reel-fade-top {
+    top: 0;
+    background: linear-gradient(to bottom, #0a0a0a 0%, transparent 100%);
+}
+
+.reel-fade-bottom {
+    bottom: 0;
+    background: linear-gradient(to top, #0a0a0a 0%, transparent 100%);
+}
+
+/* ── Group header ── */
+.reel-group {
+    width: 100%;
+    max-width: 360px;
+}
+
+.reel-group-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 50px 0 35px;
+}
+
+.reel-divider-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.reel-group-name {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+/* ── Entry ── */
+.reel-entry {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.reel-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.reel-decision {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.decision-smash {
+    color: #4cd137;
+    text-shadow: 0 0 12px rgba(76, 209, 55, 0.25);
+}
+
+.decision-pass {
+    color: #ec5e6f;
+    text-shadow: 0 0 12px rgba(236, 94, 111, 0.25);
+}
+
+/* ── Speed indicator ── */
+.speed-indicator {
+    position: fixed;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.25);
+    letter-spacing: 1px;
+    z-index: 20;
+    pointer-events: none;
+    animation: indicatorFadeIn 2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes indicatorFadeIn {
+    0% { opacity: 0; }
+    70% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ═══════ End Phase ═══════ */
+.finale-end {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    animation: endFadeIn 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes endFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.finale-fin {
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 10px;
+    font-style: italic;
+}
+
+.finale-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-finale {
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.btn-finale:hover {
+    transform: scale(1.05);
+}
+
+.btn-finale:active {
+    transform: scale(0.97);
+}
+
+.btn-finale-reset {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-finale-reset:hover {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-finale-done {
+    background: white;
+    color: #1a1a1a;
+}
+
+.btn-finale-done:hover {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}

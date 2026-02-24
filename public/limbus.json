@@ -16,7 +16,8 @@
             "H Corp",
             "Jia Family"
         ],
-        "url": "https://limbuscompany.wiki.gg/images/thumb/Jia_Zheng_StandingSprite.png/187px-Jia_Zheng_StandingSprite.png?61da52"
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Jia_Zheng_StandingSprite.png/187px-Jia_Zheng_StandingSprite.png?61da52",
+        "bgart": "hongyuan"
     },
     "3_00003": {
         "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00003.png",
@@ -62,7 +63,8 @@
             "H Corp",
             "Xue Family"
         ],
-        "url": "https://limbuscompany.wiki.gg/images/thumb/Lin_Daiyu_StandingSprite.png/193px-Lin_Daiyu_StandingSprite.png?376211"
+        "url": "https://limbuscompany.wiki.gg/images/thumb/Lin_Daiyu_StandingSprite.png/193px-Lin_Daiyu_StandingSprite.png?376211",
+        "bgart": "hongyuan"
     },
     "3_00008": {
         "image_path": "/Users/derekzhu/Code/lunarpass/mooncrawler/downloads/3_00008.png",

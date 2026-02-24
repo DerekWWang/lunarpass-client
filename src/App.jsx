@@ -3,6 +3,7 @@ import './App.css'
 import { Card } from './components/Card'
 import { SideMenu } from './components/SideMenu'
 import { StatsPage } from './components/StatsPage'
+import { FinaleReel } from './components/FinaleReel'
 
 const CHARACTER_GROUPS = {
   "limbus": { id: "limbus", name: "Limbus Company", url: "/limbus.json" },
@@ -12,6 +13,7 @@ const CHARACTER_GROUPS = {
 
 function App() {
   const [allProfiles, setAllProfiles] = useState([]);
+  const [bgData, setBgData] = useState(null);
   const [enabledGroups, setEnabledGroups] = useState(() => {
     // Default to all enabled
     return Object.keys(CHARACTER_GROUPS).reduce((acc, key) => ({ ...acc, [key]: true }), {});
@@ -32,6 +34,7 @@ function App() {
   const [showWarning, setShowWarning] = useState(false);
   const [warningMessage, setWarningMessage] = useState("You have not made a choice for this city dweller yet.");
   const [showStats, setShowStats] = useState(false);
+  const [showFinale, setShowFinale] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Persist history to localStorage
@@ -53,6 +56,10 @@ function App() {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
+        const bgRes = await fetch('/bga/bg.json');
+        const bg = await bgRes.json();
+        setBgData(bg);
+
         const promises = Object.entries(CHARACTER_GROUPS).map(async ([groupKey, groupInfo]) => {
           const res = await fetch(groupInfo.url);
           const data = await res.json();
@@ -63,18 +70,15 @@ function App() {
             bio: item.flavor_text,
             image: item.image_path.replace('/Users/derekzhu/Code/lunarpass/mooncrawler/downloads', '/media'),
             url: item.url,
+            bgart: item.bgart || null,
             is_sus: item.is_sus || false,
             age: null
           }));
         });
 
         const results = await Promise.all(promises);
-        // Interleave or combine? Simple concat for now, maybe interleave later if desired.
-        // For distinct sets, concat is usually fine, or purely sequential based on load order.
-        // Let's flatten.
         const combined = results.flat();
         setAllProfiles(combined);
-        // Set initial tilt only once
         setTilt(Math.random() * 10 - 5);
       } catch (err) {
         console.error("Failed to load profiles:", err);
@@ -117,6 +121,15 @@ function App() {
     // Normal gameplay updates history, which shouldn't trigger this "seek" logic.
   }, [profiles]);
 
+  const getBackgroundUrl = (profile) => {
+    if (!bgData || !profile) return null;
+    if (profile.bgart) {
+      const groupBg = bgData[profile.group];
+      if (groupBg && groupBg[profile.bgart]) return groupBg[profile.bgart];
+    }
+    return bgData.default || null;
+  };
+
   const currentProfile = profiles[index];
   const nextProfile = profiles[(index + 1) % profiles.length];
 
@@ -138,16 +151,18 @@ function App() {
       [currentProfile.id]: direction === 'left' ? 'smash' : 'pass'
     }));
 
+    const willFinish = index + 1 >= profiles.length;
+
     setSwipeDirection(direction);
 
     setTimeout(() => {
       setLastSwipeDirection(direction);
-      // Move to next card, do NOT wrap around if we want end state.
-      // We increment index. If it exceeds length, we render Stats.
       setIndex((prevIndex) => prevIndex + 1);
       setSwipeDirection(null);
-      // Generate new random tilt for the incoming card
       setTilt(Math.random() * 10 - 5);
+      if (willFinish) {
+        setShowFinale(true);
+      }
     }, 500);
   };
 
@@ -206,7 +221,6 @@ function App() {
     }
   };
 
-  // Preload next few images
   useEffect(() => {
     if (profiles.length === 0) return;
 
@@ -219,11 +233,15 @@ function App() {
         if (urlToCheck) {
           const img = new Image();
           img.src = urlToCheck;
-          console.log(`Preloading image for ${profile.name}`);
+        }
+        const bgUrl = getBackgroundUrl(profile);
+        if (bgUrl) {
+          const bgImg = new Image();
+          bgImg.src = bgUrl;
         }
       }
     }
-  }, [index, profiles]);
+  }, [index, profiles, bgData]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -249,8 +267,28 @@ function App() {
     return <div className="app-container"><div className="loading">Loading profiles...</div></div>;
   }
 
-  // Show Stats if done
+  const handleFinaleReset = () => {
+    setHistory({});
+    localStorage.removeItem('lunarpass-history');
+    setIndex(0);
+    localStorage.removeItem('lunarpass-index');
+    setSwipeDirection(null);
+    setLastSwipeDirection(null);
+    setShowFinale(false);
+  };
+
   if (index >= profiles.length) {
+    if (showFinale) {
+      return (
+        <FinaleReel
+          profiles={profiles}
+          history={history}
+          characterGroups={CHARACTER_GROUPS}
+          onReset={handleFinaleReset}
+          onDone={() => setShowFinale(false)}
+        />
+      );
+    }
     return <StatsPage history={history} allProfiles={allProfiles} onRestart={handleReset} />;
   }
 
@@ -274,7 +312,13 @@ function App() {
           </svg>
         </button>
         <h1>Lunarpass</h1>
-        <button className="btn-stats" onClick={() => setShowStats(true)}>Stats</button>
+        <button className="btn-stats" onClick={() => setShowStats(true)} aria-label="View Stats">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="18" y="3" width="4" height="18" rx="1"></rect>
+            <rect x="10" y="9" width="4" height="12" rx="1"></rect>
+            <rect x="2" y="14" width="4" height="7" rx="1"></rect>
+          </svg>
+        </button>
       </header>
 
       <SideMenu
@@ -288,6 +332,7 @@ function App() {
         <Card
           key={currentProfile.id}
           profile={currentProfile}
+          backgroundUrl={getBackgroundUrl(currentProfile)}
           swipeStatus={swipeDirection}
           enteringFrom={lastSwipeDirection}
           style={cardStyle}

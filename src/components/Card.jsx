@@ -1,10 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-export const Card = ({ profile, swipeStatus, enteringFrom, style }) => {
-    // swipeStatus: 'left' | 'right' | null
-    // enteringFrom: 'left' | 'right' | null (direction the card comes FROM)
-
+export const Card = ({ profile, backgroundUrl, swipeStatus, enteringFrom, style }) => {
     let animationClass = '';
     if (swipeStatus) {
         animationClass = `swipe-${swipeStatus}`;
@@ -20,7 +17,6 @@ export const Card = ({ profile, swipeStatus, enteringFrom, style }) => {
         }
     };
 
-    // Reset image source when profile changes
     React.useEffect(() => {
         setImageSrc(profile.url || profile.image);
     }, [profile]);
@@ -31,6 +27,12 @@ export const Card = ({ profile, swipeStatus, enteringFrom, style }) => {
             style={style}
         >
             <div className="card">
+                {backgroundUrl && (
+                    <div
+                        className="card-bg"
+                        style={{ backgroundImage: `url(${backgroundUrl})` }}
+                    />
+                )}
                 <div className="card-image-container">
                     <img
                         src={imageSrc}
@@ -48,7 +50,6 @@ export const Card = ({ profile, swipeStatus, enteringFrom, style }) => {
                     <p className="card-bio">{profile.bio}</p>
                 </div>
             </div>
-            {/* Optional: Overlay/Badge for Like/Nope could go here */}
         </div>
     );
 };
